@@ -18,3 +18,18 @@ git add .
 
  To check remote version
  git remote -v
+
+''' Build Docker images:
+ docker build -t <images namee >: <tagname>
+ <images name should be in small letter>
+
+ To List of the docker images
+'''
+docker images 
+'''
+To run the docker images 
+'''
+docker run -p 5000:5000 -e PORT=5000 a7f288961f55
+'''
+to stop the container id 
+ docker stop <container id> 
