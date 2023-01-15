@@ -3,7 +3,7 @@ from setuptools import setup,find_packages
 from typing import List
 
 PROJECT_NAME='housing-predictor'
-VERSION='0.0.3'
+VERSION='0.0.4'
 AUTHOR='Manish Jha'
 DESCRIPTION='This is my first machine learning project'
 PACKAGES=['housing']
