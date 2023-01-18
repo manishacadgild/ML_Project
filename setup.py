@@ -2,7 +2,7 @@ from setuptools import setup,find_packages
 from typing import List
 
 PROJECT_NAME='housing-predictor'
-VERSION='0.0.5'
+VERSION='0.0.6'
 AUTHOR='Manish Jha'
 DESCRIPTION='This is my first machine learning project'
 PACKAGES=['housing']
