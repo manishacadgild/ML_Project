@@ -8,16 +8,21 @@ class HousingException(Exception):
                                                                       error_detail=error_detail)
         
     @staticmethod
-    def get_details_error_message(error_message:Exception,error_detail:sys)->str:
-        
+    def get_detailed_error_message(error_message:Exception,error_detail:sys)->str:
         """
-        error_messgae of Exception object 
-        error_details in sys
+        error_message: Exception object
+        error_detail: object of sys module
         """
-        _,_,exec_tb=error_detail.exc_info()
-        line_number=exec_tb.tb_frame.f_lineno
-        file_name=exec_tb.tb_frame.f_code.co_filename
-        error_message = f"Error occured in script:[{file_name}] at the line no:[{line_number}] and error message:[{error_message}]"
+        _,_ ,exec_tb = error_detail.exc_info()
+        exception_block_line_number = exec_tb.tb_frame.f_lineno
+        try_block_line_number = exec_tb.tb_lineno
+        file_name = exec_tb.tb_frame.f_code.co_filename
+        error_message = f"""
+        Error occured in script: 
+        [ {file_name} ] at 
+        try block line number: [{try_block_line_number}] and exception block line number: [{exception_block_line_number}] 
+        error message: [{error_message}]
+        """
         return error_message
     
     def __str__(self):
